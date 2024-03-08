@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import ImgSrc from './profile.jpeg';
+
+import { REACT_GRAPHQL_NODE_E2E_TESTING_IMG, REACT_GRAPHQL_NODE_E2E_TESTING_TITLE } from './articles/react-graphql-node-e2e-testing';
 
 export default function Home() {
   return (
@@ -18,16 +21,21 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <Link href="/react-graphql-node-e2e-testing" className={styles.card}>
-            <h2>Integration and E2E testing with React, GraphQL, Node and Mongo, and mocking the time &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <Link href="/articles/react-graphql-node-e2e-testing" className={styles.card}>
+            <h2>{REACT_GRAPHQL_NODE_E2E_TESTING_TITLE} &rarr;</h2>
+            <Image
+              src={REACT_GRAPHQL_NODE_E2E_TESTING_IMG}
+              style={{ borderRadius: '10px', width: '100%', height: 'auto' }}
+              alt='react-graphql-node-e2e-testing'
+            />
           </Link>
         </div>
       </main>
 
       <footer className={styles.footer}>
         <a href="mailto:anda.nenu@gmail.com">
-          <Image src="/profile.jpeg" alt="Anda" width={50} height={50} style={{ borderRadius: '50%' }} />
+          <Image src={ImgSrc} alt="Anda" width={50} height={50} style={{ borderRadius: '50%' }} />
+          Software Engineer {'\n'}
           Contact me
         </a>
       </footer>
